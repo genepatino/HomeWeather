@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
-import firebaseConfig from "./firebaseConfig";
+import firebaseConfig from "./firebase/firebaseConfig";
 import { FirebaseAppProvider } from "reactfire";
 import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
@@ -27,9 +27,9 @@ i18next.init({
     },
   },
 });
-const AppContainer = () => (
+const AppContainer = ({ loader }) => (
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
+    <PersistGate loading={loader} persistor={persistor}>
       <App />
     </PersistGate>
   </Provider>
@@ -37,7 +37,7 @@ const AppContainer = () => (
 
 ReactDOM.render(
   <React.StrictMode>
-    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+    <FirebaseAppProvider appName="HomeWeather" firebaseConfig={firebaseConfig}>
       <I18nextProvider i18n={i18next}>
         <AppContainer />
       </I18nextProvider>

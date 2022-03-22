@@ -1,5 +1,25 @@
 {
-  "home": {
-    "h1": "Hola mundo de HomeWeather"
+  "labels": {
+    "require-general": "Campo requerido",
+    "require-email": "Email invalido",
+    "require-password":"Debe contener 8 caracteres. Una mayúscula, una minúscula, un número y un carácter especial",
+    "require-password-min": "¡La contraseña debe tener más de 6 caracteres!",
+    "confirm-password": "Las contraseñas deben coincidir",
+    "notification-message-danger": "Parece que has tenido problemas! Puedes intentar crear un usuario, verificar tu conexión o usuario y contraseña",
+    "notification-message-succes":"Tu usuario se ha creado satisfactoriamente",
+    "notification-message-danger-register": "Parece que has tenido problemas para crear tu usuario. Puedes verificar tu conexión",
+    "title-login": "Inicio de sesión",
+    "label-email": "Dirección de correo electrónico",
+    "label-password": "Contraseña",
+    "label-password-confirmation":"Confirmar contraseña",
+    "login": "Iniciar sesión",
+    "login-here":"¿Ya tienes cuenta? Inicia sesión aquí!",
+    "register-here": "¿No tienes cuenta? Regístrate aquí!",
+    "register": "Registrarse",
+    "sign-up": "Registrate",
+    "logOut": "Cerrar sesión",
+    "translate": "Traducir",
+    "search": "Búsqueda",
+    "enter-city": "Ingrese ciudad o ubicación"
   }
 }

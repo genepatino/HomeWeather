@@ -1,0 +1,35 @@
+.list-container {
+  display: none;
+  width: 80%;
+  border: 1px solid gainsboro;
+  border-top: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-left: 15px;
+  outline: none;
+  font-size: 14px;
+  background: white;
+
+  &.show {
+    display: flex;
+  }
+
+  .ul-list-container {
+    list-style-type: none;
+    padding-left: 5px;
+    width: 100%;
+    .list {
+      width: 60%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+}
+
+/*    
+    position: absolute;
+    
+    top: 78px;
+    left: 15px;
+    right: 338px; */

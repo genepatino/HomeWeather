@@ -1,0 +1,63 @@
+.city-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  .date-hour-city {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .date {
+      color: #2b3492;
+    }
+    .hour {
+      color: #2b3492;
+    }
+    .h2 {
+      margin: 0px;
+      margin-top: 5px;
+      font-family: "Architects Daughter", cursive;
+    }
+  }
+  .icon-temp {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    .icon-div {
+      .icon-weather {
+        width: 40px;
+      }
+    }
+    .temp {
+      font-size: 30px;
+      font-family: "Architects Daughter", cursive;
+    }
+    ._ {
+      font-size: 26px;
+      font-weight: 100;
+    }
+  }
+
+  .properties {
+    border-left: 1px solid #31326f;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 15px;
+    .lat-lon {
+      display: flex;
+      gap: 10px;
+    }
+    .hum-pre {
+      display: flex;
+      gap: 10px;
+    }
+    .tmin-tmax {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}

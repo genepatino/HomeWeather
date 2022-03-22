@@ -1,0 +1,189 @@
+.home-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .image-container {
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .call-weather-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto;
+    gap: 15px;
+    width: 60%;
+    position: absolute;
+    /* align-items: center;
+    flex-direction: column; */
+    /* .component-header {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    } */
+    /* .header {
+      display: grid;
+      width: 100%;
+      height: 15%;
+      grid-template-columns: 1fr 200px 1fr;
+      grid-template-rows: auto;
+
+      display: flex;
+      width: 100%;
+      height: 15%;
+      grid-gap: 1em;
+      gap: 1em;
+      align-items: center;
+      margin-bottom: 15px;
+      background: rgb(255, 255, 255, 0.7);
+      border-radius: 4px;
+      opacity: 0.95;
+      .input-search {
+        grid-column: 1/3;
+        background-color: brown;
+        display: flex;
+        align-items: center;
+      }
+      .buttons {
+        grid-column: 3/4;
+        background-color: yellowgreen;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+    } */ /* form va dentro de header */
+    /* .form {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      .search {
+        display: flex;
+        width: 60%;
+        margin-left: 15px;
+        flex-direction: column;
+
+        .label {
+          font-size: 14px;
+          color: #6f6e79;
+          font-weight: bold;
+          margin: 3px 4px;
+        }
+        .search-error {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          .field-location {
+            width: 80%;
+            padding: 0px 0px 0px 15px;
+            height: 34px;
+            border-radius: 5px;
+            outline: none;
+            font-size: 14px;
+            border: 1px solid gainsboro;
+          }
+
+          .field-location-error {
+            outline: none;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid red;
+          }
+          .field-location:focus {
+            outline: none;
+            background-color: #ffffff;
+          }
+          .error-search {
+            color: red;
+            font-size: 0.8rem;
+            margin-left: 4px;
+          }
+          .field-cities {
+            outline: none;
+            background-color: #ffffff;
+            color: red;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-bottom: none;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
+        }
+      }
+      .container-icon {
+        display: flex;
+        width: 40%;
+        margin-right: 15px;
+        justify-content: right;
+        gap: 1em;
+        margin-top: 19px;
+        align-items: baseline;
+      }
+
+      .icon-user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 50px;
+        background-color: #e3e7ff;
+        font-size: larger;
+        color: #2b3492;
+        border: 1px solid #2b3492;
+      }
+    } */
+    .call-api {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column: 1/2;
+      grid-row: 2/3;
+      background: rgb(255, 255, 255, 0.7);
+
+      .item-a {
+        grid-row: 1;
+        grid-column: 1/2;
+        border-top-left-radius: 5px;
+        padding: 20px;
+      }
+      .item-b {
+        background-color: rgb(43, 46, 226);
+        grid-row: 1;
+        grid-column: 2/4;
+        padding: 20px;
+        border-top-right-radius: 5px;
+      }
+      .item-c {
+        background-color: rgb(43, 226, 211);
+        grid-row: 2;
+        grid-column: 1/3;
+        padding: 20px;
+        border-bottom-left-radius: 5px;
+      }
+      .item-d {
+        background-color: rgb(226, 198, 43);
+        grid-row: 2;
+        grid-column: 3/4;
+        padding: 20px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+
+  .search-location-error {
+    display: flex;
+    align-items: initial;
+    margin-top: 15px;
+  }
+}
