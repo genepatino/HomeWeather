@@ -1,44 +1,61 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import constants from "../../../../utility/constant/constants";
-
+import debounce from "../../../../utility/functions/debounce";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames";
+import allweather from "../../../../../images/allweather.png";
 import "./addcity.scss";
 
 const AddCity = () => {
   const [t] = useTranslation("global");
-  const [search, setSearch] = useState("");
+  const [searchCities, setSearchCities] = useState(null);
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
-
-  useEffect(() => {
+  const updateValue = (e) => {
+    const value = e.target.value;
     const fetchData = async () => {
       try {
-        const urlCities = `https://api.openweathermap.org/data/2.5/find?q=${search}&appid=${constants.apiWeather}`;
+        const urlCities = `https://api.openweathermap.org/data/2.5/find?q=${value}&appid=${constants.apiWeather}`;
         const response = await fetch(urlCities);
         const data = await response.json();
-        console.log("dataCities", data);
+        setSearchCities(data.list);
+        console.log(searchCities);
       } catch (error) {
         console.error();
       }
     };
-    return () => {
-      if (search !== "") {
-        fetchData();
-      }
-    };
-  }, [search]);
+    fetchData();
+  };
+  const renderListCities = debounce(updateValue, 1000);
 
   return (
-    <div>
+    <div
+      className={classNames("search-cities-container", {
+        visible: searchCities,
+      })}
+    >
       <input
+        className={classNames("input-search", { visible: searchCities })}
         type="text"
-        placeholder="add city"
-        value={search}
-        onChange={handleChange}
-      ></input>
-      {/* <button onClick={fetchData}>busqueda</button> */}
+        placeholder="Search city"
+        onChange={renderListCities}
+      />
+      <FontAwesomeIcon className="search-icon" icon="fa-magnifying-glass" />
+
+      <ul className={classNames("ul-container", { visible: searchCities })}>
+        {searchCities &&
+          searchCities.map((e) => {
+            return (
+              <li key={e.id}>
+                <span>
+                  {e.name}, {e.sys.country}
+                </span>
+                <span>{e.weather.map((e) => e.description)}</span>
+                <img src={allweather} alt="" className="img" />
+              </li>
+            );
+          })}
+      </ul>
     </div>
   );
 };

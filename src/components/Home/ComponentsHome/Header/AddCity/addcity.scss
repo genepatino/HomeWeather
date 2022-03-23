@@ -1,9 +1,66 @@
-.add-city {
-  margin: 5px 0 15px 0px;
-  padding-left: 15px;
-  height: 32px;
-  border-radius: 5px;
-  outline: none;
-  font-size: 14px;
-  border: 1px solid gainsboro;
+.search-cities-container {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  &.visible {
+    position: absolute;
+    top: -20px;
+  }
+  .input-search {
+    padding-left: 15px;
+    height: 32px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    border: 1px solid gainsboro;
+    &.visible {
+      border-bottom: none;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .search-icon {
+    top: 9px;
+    right: 70;
+    color: #c4c5ca;
+    position: absolute;
+    align-self: flex-end;
+    height: 1.1em;
+    padding-right: 15px;
+  }
+  .ul-container {
+    display: none;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0px 8px 5px 8px;
+    list-style: none;
+    background: white;
+
+    &.visible {
+      display: flex;
+      border-bottom: 5px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top: 0;
+      border: 1px solid gainsboro;
+      border-top: none;
+      z-index: 1;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      &:hover {
+        background: #8080801f;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .img {
+        width: 20px;
+      }
+    }
+  }
 }

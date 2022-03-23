@@ -2,23 +2,25 @@
   display: grid;
   width: 100%;
   grid-template-columns: 2fr 1fr;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.7);
+  border-radius: 5px;
 
   .search-input {
-    grid-column: 1/2;
-    background-color: brown;
     display: flex;
     align-items: center;
     padding-left: 20px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    position: relative;
   }
   .buttons {
-    background-color: rgb(255, 255, 255, 0.7);
-    grid-column: 2/3;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    padding-right: 20px;
+    gap: 15px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
   }
