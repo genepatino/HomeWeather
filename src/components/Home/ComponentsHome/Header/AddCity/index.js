@@ -19,7 +19,6 @@ const AddCity = () => {
         const response = await fetch(urlCities);
         const data = await response.json();
         setSearchCities(data.list);
-        console.log(searchCities);
       } catch (error) {
         console.error();
       }
@@ -27,7 +26,7 @@ const AddCity = () => {
     fetchData();
   };
   const renderListCities = debounce(updateValue, 1000);
-
+  console.log("searchCities", searchCities);
   return (
     <div
       className={classNames("search-cities-container", {
@@ -50,7 +49,7 @@ const AddCity = () => {
                 <span>
                   {e.name}, {e.sys.country}
                 </span>
-                <span>{e.weather.map((e) => e.description)}</span>
+                <span>{e.weather.map((e) => t(e.description))}</span>
                 <img src={allweather} alt="" className="img" />
               </li>
             );

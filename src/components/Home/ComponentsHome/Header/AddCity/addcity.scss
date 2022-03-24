@@ -49,8 +49,8 @@
       z-index: 1;
     }
     li {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) 50px;
       padding: 8px;
       &:hover {
         background: #8080801f;
@@ -59,7 +59,9 @@
       }
 
       .img {
-        width: 20px;
+        max-width: 20px;
+        max-height: 20px;
+        justify-self: end;
       }
     }
   }
